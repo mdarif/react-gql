@@ -5,7 +5,7 @@ import App from './App'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import { BrowserRouter } from 'react-router-dom'
 
-// GraphQL Server:
+// GraphQL Server, there is always going to be one route only:
 // https://rickandmortyapi.com/graphql
 
 /**

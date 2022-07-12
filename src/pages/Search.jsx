@@ -22,7 +22,7 @@ function Search() {
    * query function in its result tuple that you call whenever you're ready
    * to execute the query.
    */
-  const [getLocations, { loading, error, data, called }] = useLazyQuery(
+  const [getLocations, { loading, error, data }] = useLazyQuery(
     GET_CHARACTER_LOCATIONS,
     {
       variables: {
@@ -30,6 +30,8 @@ function Search() {
       },
     }
   );
+
+  console.log({ loading, error, data });
 
   return (
     <div>
@@ -45,7 +47,7 @@ function Search() {
       {data && (
         <ul>
           {data.characters.results.map((result) => {
-            return <li>{result.location.name}</li>;
+            return <li key={result.location.name}>{result.location.name}</li>;
           })}
         </ul>
       )}
